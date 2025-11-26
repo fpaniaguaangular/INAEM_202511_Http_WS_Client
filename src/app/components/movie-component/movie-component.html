@@ -1,3 +1,4 @@
+<div>Peticiones:{{httpOmdbService.contadorPeticiones()}}</div>
 <input type="text" name="iTitle" id="iTitle" placeholder="Título" [(ngModel)]="movieTitle">
 <button id="bSearch" class="boton" (click)="getMovieByTitle()" [disabled]="loading">Buscar</button>
 <button id="bSave" class="boton" >Guardar</button>

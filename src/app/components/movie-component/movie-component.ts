@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, effect, inject } from '@angular/core';
 import { HttpOmdbService } from '../../services/http-omdb-service';
 import { IMovie } from '../../interfaces/imovie';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './movie-component.css',
 })
 export class MovieComponent {
-  private httpOmdbService = inject(HttpOmdbService);
+  public httpOmdbService = inject(HttpOmdbService);
   public movieTitle: string = "";
   public loading: boolean = false;
   private cdr = inject(ChangeDetectorRef);
