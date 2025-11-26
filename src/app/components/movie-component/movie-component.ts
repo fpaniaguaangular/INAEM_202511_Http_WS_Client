@@ -20,7 +20,7 @@ export class MovieComponent {
     this.httpOmdbService.getMovieByTitle(this.movieTitle).subscribe((data)=>{
       this.movie=data;
       this.movieTitle="";
-      this.cdr.detectChanges();
+      this.cdr.detectChanges();//Forzando el refresco de la interfaz
       console.log(data);
     });
   }
