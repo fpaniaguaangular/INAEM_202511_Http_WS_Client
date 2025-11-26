@@ -1,1 +1,11 @@
-<p>movie-component works!</p>
+<input type="text" name="iTitle" id="iTitle" placeholder="Título" [(ngModel)]="movieTitle">
+<button id="bSearch" (click)="getMovieByTitle()">Buscar</button>
+<div class="movie-card">
+    <div class="title">{{movie?.Title ? movie.Title : 'No disponible'}}</div>
+    <div class="director">{{movie?.Director ? movie.Director : 'No disponible'}}</div>
+    <div class="year">{{movie?.Year ? movie.Year : 'No disponible'}}</div>
+    <div class="genero">{{movie?.Genre ? movie.Genre : 'No disponible'}}</div>
+    <div>
+        <img [src]="movie?.Poster">
+    </div>
+</div>
