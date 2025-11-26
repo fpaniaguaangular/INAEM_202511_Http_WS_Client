@@ -1,5 +1,11 @@
 <input type="text" name="iTitle" id="iTitle" placeholder="Título" [(ngModel)]="movieTitle">
-<button id="bSearch" (click)="getMovieByTitle()">Buscar</button>
+<button id="bSearch" class="boton" (click)="getMovieByTitle()" [disabled]="loading">Buscar</button>
+<button id="bSave" class="boton" >Guardar</button>
+@if (loading) {
+<div class="movie-card">
+    <img src="images/loading.gif">
+</div>
+} @else {
 <div class="movie-card">
     <div class="title">{{movie?.Title ? movie.Title : 'No disponible'}}</div>
     <div class="director">{{movie?.Director ? movie.Director : 'No disponible'}}</div>
@@ -9,3 +15,4 @@
         <img [src]="movie?.Poster">
     </div>
 </div>
+}

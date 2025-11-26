@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 export class HttpOmdbService {
   private httpClient = inject(HttpClient);//INJECT
   public getMovieByTitle(title: string) : Observable<any> {
-    return this.httpClient.get(`http://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`);
+    const URL = `http://www.omdbapi.com/?apikey=${API_KEY}&t=${title}`;
+    console.info(URL);
+    return this.httpClient.get(URL);
   }
 }
