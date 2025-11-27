@@ -1,6 +1,6 @@
 :host {
     display: block;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
@@ -12,7 +12,7 @@
     border: 2px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
-    width: 60%;
+    width: 70%;
     box-sizing: border-box;
     margin-right: 10px;
     transition: border-color 0.3s ease;
@@ -24,8 +24,9 @@
 }
 
 .boton {
+    width: 12%;
     padding: 10px 20px;
-    margin-right: 1em;
+    margin-left: 1em;
     background-color: #007bff;
     color: white;
     border: none;
@@ -57,7 +58,7 @@
 }
 
 /* Contenedor de la información */
-.movie-card > div:not(:last-child):not(:first-child) {
+.movie-card>div:not(:last-child):not(:first-child) {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -68,26 +69,37 @@
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
-    border-bottom: 2px solid #f0f0f0;
     padding-bottom: 5px;
 }
 
-.director, .year, .genero {
+.director,
+.year,
+.genero {
     font-size: 1em;
     color: #555;
     margin-bottom: 5px;
     line-height: 1.5;
 }
 
-.director::before, .year::before, .genero::before {
+.director::before,
+.year::before,
+.genero::before {
     font-weight: bold;
     color: #777;
     margin-right: 5px;
 }
 
-.director::before { content: "Director: "; }
-.year::before { content: "Año: "; }
-.genero::before { content: "Género: "; }
+.director::before {
+    content: "Director: ";
+}
+
+.year::before {
+    content: "Año: ";
+}
+
+.genero::before {
+    content: "Género: ";
+}
 
 /* Contenedor de la Imagen */
 .movie-card div:last-child {
@@ -104,6 +116,10 @@
     display: block;
     max-height: 300px;
     width: auto;
+}
+
+#formulario {
+    width: 100%;
 }
 
 /* --- Responsividad (Móviles) --- */
@@ -128,7 +144,7 @@
         margin-bottom: 10px;
         margin-right: 0;
     }
-    
+
     .boton {
         width: 100%;
     }

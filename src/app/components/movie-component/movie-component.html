@@ -1,7 +1,9 @@
 <div>Peticiones:{{httpOmdbService.contadorPeticiones()}}</div>
-<input type="text" name="iTitle" id="iTitle" placeholder="Título" [(ngModel)]="movieTitle">
-<button id="bSearch" class="boton" (click)="getMovieByTitle()" [disabled]="loading">Buscar</button>
-<button id="bSave" class="boton" >Guardar</button>
+<div id="formulario">
+    <input type="text" name="iTitle" id="iTitle" placeholder="Título" [(ngModel)]="movieTitle">
+    <button id="bSearch" class="boton" (click)="getMovieByTitle()" [disabled]="loading">Buscar</button>
+    <button id="bSave" class="boton">Guardar</button>
+</div>
 @if (loading) {
 <div class="movie-card">
     <img src="images/loading.gif">
@@ -13,7 +15,7 @@
     <div class="year">{{movie?.Year ? movie.Year : 'No disponible'}}</div>
     <div class="genero">{{movie?.Genre ? movie.Genre : 'No disponible'}}</div>
     <div>
-        <img [src]="movie?.Poster">
+        <img [src]="movie?.Poster==='N/A' ? 'images/no-image-available.jpg' : movie?.Poster" alt="Poster">
     </div>
 </div>
 }
